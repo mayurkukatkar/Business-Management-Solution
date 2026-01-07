@@ -118,7 +118,7 @@ export async function verifyDocumentOtp(id: string, otp: string) {
         doc.signature = {
             signedBy: 'Client (Verified via Email)',
             signedAt: new Date(),
-            ipAddress: '127.0.0.1', // In Next.js action, getting real IP requires headers which might be tricky in server action directly without passing it.
+            ipAddress: '0.0.0.0', // Placeholder IP
             otpVerified: true
         };
         doc.status = 'ACCEPTED';
