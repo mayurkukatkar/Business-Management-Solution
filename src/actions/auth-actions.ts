@@ -1,11 +1,15 @@
 'use server';
 
-import { signIn } from '@/lib/auth';
+import { signIn, signOut } from '@/lib/auth';
 import { AuthError } from 'next-auth';
 import connectToDatabase from '@/lib/db';
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
 import { redirect } from 'next/navigation';
+
+export async function signout() {
+    await signOut({ redirectTo: '/login' });
+}
 
 export async function authenticate(
     prevState: string | undefined,

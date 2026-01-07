@@ -11,6 +11,7 @@ import {
     ShoppingCart,
     Users,
 } from "lucide-react"
+import { signout } from "@/actions/auth-actions"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -148,7 +149,11 @@ export default function DashboardLayout({
                             <DropdownMenuItem>Settings</DropdownMenuItem>
                             <DropdownMenuItem>Support</DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>Logout</DropdownMenuItem>
+                            <form action={signout}>
+                                <button className="w-full text-left">
+                                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                                </button>
+                            </form>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </header>
